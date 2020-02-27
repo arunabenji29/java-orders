@@ -14,13 +14,13 @@ public class OrderPayments implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "ordnum")
-    @JsonIgnoreProperties("orders")
+    @JsonIgnoreProperties("orderpayments")
     private Order ordernumber;
 
     @Id
     @ManyToOne
     @JoinColumn(name = "paymentid")
-    @JsonIgnoreProperties("payments")
+    @JsonIgnoreProperties("orderpayments")
     private Payment paymentsid;
 
     public OrderPayments(Order ordernumber, Payment paymentsid) {

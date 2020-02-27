@@ -27,11 +27,11 @@ public class CustomerController {
 
 
     //GET http://localhost:2023/customers/customer/7
-    @GetMapping(value = "/customer/{custid}",
+    @GetMapping(value = "/customer/{custcode}",
                 produces = {"application/json"})
-    public ResponseEntity<?> findById(@PathVariable long custid){
-        Customer myCust = customerService.findById(custid);
-
+    public ResponseEntity<?> findById(@PathVariable long custcode)
+    {
+        Customer myCust = customerService.findById(custcode);
         return new ResponseEntity<>(myCust,HttpStatus.OK);
     }
 

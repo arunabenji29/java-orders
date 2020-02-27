@@ -29,7 +29,7 @@ public class Order {
     @OneToMany(mappedBy = "ordernumber",
                 cascade = CascadeType.ALL,
                 orphanRemoval = true)
-    @JsonIgnoreProperties("orders")
+    @JsonIgnoreProperties("ordernumber")
     private List<OrderPayments> orderpayments = new ArrayList<>();
 
     public Order(double ordamount,double advanceamount, Customer orderCustomer,String orderdescription) {
@@ -41,6 +41,8 @@ public class Order {
 
     public Order() {
     }
+
+
 
     public long getOrdnum() {
         return ordnum;

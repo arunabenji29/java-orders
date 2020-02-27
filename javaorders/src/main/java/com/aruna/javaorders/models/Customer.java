@@ -45,6 +45,9 @@ public class Customer {
     @JsonIgnoreProperties("orderCustomer")
     private List<Order> orders = new ArrayList<>();
 
+    public Customer() {
+    }
+
     public Customer(String custname,String custcity,String workingarea,String custcountry,String grade,
                     double openingamt,double receiveamt,double paymentamt,double outstandingamt,String phone, Agent agent) {
         this.custname = custname;
@@ -61,7 +64,14 @@ public class Customer {
     }
 
 
-    public Customer() {
+
+
+    public long getCustcode() {
+        return custcode;
+    }
+
+    public void setCustcode(long custcode) {
+        this.custcode = custcode;
     }
 
     public String getCustname() {

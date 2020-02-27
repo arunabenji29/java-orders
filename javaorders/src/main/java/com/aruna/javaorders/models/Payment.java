@@ -19,7 +19,7 @@ public class Payment {
 
     @OneToMany(mappedBy = "paymentsid",
                 cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("payments")
+    @JsonIgnoreProperties("paymentsid")
     private List<OrderPayments> orderpayments = new ArrayList<>();
 
     public Payment(String type) {
